@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar.tsx';
 import Hero from './components/Hero.tsx';
@@ -10,7 +9,6 @@ import EducationSection from './components/Education.tsx';
 import Contact from './components/Contact.tsx';
 import Footer from './components/Footer.tsx';
 import CustomCursor from './components/CustomCursor.tsx';
-import TestimonialSlider from './components/TestimonialSlider.tsx';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -44,8 +42,6 @@ const App: React.FC = () => {
         <Skills />
         <DevPulse />
         <Projects />
-        {/* Fix: Added TestimonialSlider to the main view to display the testimonials section */}
-        <TestimonialSlider />
         <EducationSection />
         <Contact />
       </main>

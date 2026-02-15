@@ -1,4 +1,3 @@
-
 export interface Project {
   id: string;
   title: string;
@@ -30,12 +29,4 @@ export interface Experience {
   position: string;
   period: string;
   description: string[];
-}
-
-// Fix: Added Testimonial interface to support the TestimonialSlider component
-export interface Testimonial {
-  name: string;
-  role: string;
-  content: string;
-  avatar: string;
 }
