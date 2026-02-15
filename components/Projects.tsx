@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { Github, ExternalLink, ArrowUpRight, Search, SlidersHorizontal } from 'lucide-react';
-import { PROJECTS } from '../constants';
-import { Project } from '../types';
+import { PROJECTS } from '../constants.tsx';
+import { Project } from '../types.ts';
 
 const Projects: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'All' | Project['category']>('All');
@@ -48,7 +47,6 @@ const Projects: React.FC = () => {
               className="group relative glass-dark rounded-3xl overflow-hidden border border-white/5 hover:border-blue-500/30 transition-all duration-500"
               onClick={() => setSelectedProject(project)}
             >
-              {/* Image Container */}
               <div className="relative h-72 overflow-hidden cursor-pointer">
                 <img 
                   src={project.imageUrl} 
@@ -56,8 +54,6 @@ const Projects: React.FC = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
-                
-                {/* Overlay Badge */}
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
                     {project.category}
@@ -65,7 +61,6 @@ const Projects: React.FC = () => {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-8">
                 <div className="flex justify-between items-start mb-4">
                   <h4 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
@@ -101,7 +96,6 @@ const Projects: React.FC = () => {
         </div>
       </div>
 
-      {/* Modal Mockup */}
       {selectedProject && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-slate-900/90 backdrop-blur-md">
           <div className="relative glass-dark max-w-4xl w-full max-h-[90vh] rounded-3xl overflow-y-auto border border-white/10 shadow-2xl">

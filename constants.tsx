@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Github, 
@@ -13,7 +12,7 @@ import {
   GitFork,
   BookOpen
 } from 'lucide-react';
-import { Project, Skill, Education } from './types';
+import { Project, Skill, Education } from './types.ts';
 
 export const NAV_LINKS = [
   { name: 'Home', href: '#home' },

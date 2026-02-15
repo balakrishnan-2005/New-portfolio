@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Terminal, Code, Cpu, ShieldCheck } from 'lucide-react';
-import { STATS } from '../constants';
+import { STATS } from '../constants.tsx';
 
 const About: React.FC = () => {
   return (
@@ -16,8 +15,6 @@ const About: React.FC = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          
-          {/* Main Content Card */}
           <div className="lg:col-span-2 glass-dark p-8 md:p-12 rounded-3xl border border-white/5 flex flex-col justify-center">
             <h4 className="text-2xl font-bold text-white mb-6">Who am I?</h4>
             <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
@@ -44,7 +41,6 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Side Bento Cards */}
           <div className="space-y-8">
             <div className="glass-dark p-8 rounded-3xl border border-white/5 hover:border-blue-500/30 transition-colors group">
               <ShieldCheck className="text-blue-500 mb-6 group-hover:scale-110 transition-transform" size={40} />
@@ -70,7 +66,6 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

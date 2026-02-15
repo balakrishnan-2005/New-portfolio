@@ -1,13 +1,12 @@
 import React from 'react';
 import { Terminal, Heart } from 'lucide-react';
-import { NAV_LINKS, SOCIAL_LINKS } from '../constants';
+import { NAV_LINKS, SOCIAL_LINKS } from '../constants.tsx';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-900 border-t border-white/5 pt-16 pb-8 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
-          
           <div className="col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg shadow-lg shadow-blue-500/10">
@@ -55,7 +54,6 @@ const Footer: React.FC = () => {
               <li><a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
-
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">

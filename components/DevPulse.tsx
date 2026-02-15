@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Terminal as TerminalIcon, GitBranch, Star, GitFork, History } from 'lucide-react';
-import { TERMINAL_COMMANDS, GITHUB_REPOS } from '../constants';
+import { TERMINAL_COMMANDS, GITHUB_REPOS } from '../constants.tsx';
 
 const DevPulse: React.FC = () => {
   const [terminalLines, setTerminalLines] = useState<string[]>(['Type "help" to see available commands.']);
@@ -41,8 +41,6 @@ const DevPulse: React.FC = () => {
         </div>
 
         <div className="grid lg:grid-cols-5 gap-8">
-          
-          {/* GitHub Activity Simulation */}
           <div className="lg:col-span-3 space-y-8">
             <div className="glass-dark p-8 rounded-[2.5rem] border border-white/5 relative overflow-hidden group">
               <div className="flex items-center justify-between mb-8">
@@ -55,7 +53,6 @@ const DevPulse: React.FC = () => {
                 <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Last 12 Months</div>
               </div>
 
-              {/* Simulated Activity Grid */}
               <div className="flex flex-wrap gap-1.5 justify-center md:justify-start">
                 {Array.from({ length: 156 }).map((_, i) => {
                   const intensity = Math.floor(Math.random() * 5);
@@ -110,7 +107,6 @@ const DevPulse: React.FC = () => {
             </div>
           </div>
 
-          {/* Interactive Terminal */}
           <div className="lg:col-span-2">
             <div className="glass-dark h-full rounded-[2.5rem] border border-white/5 flex flex-col shadow-2xl relative overflow-hidden">
               <div className="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-slate-800/20 backdrop-blur-md">
@@ -154,7 +150,6 @@ const DevPulse: React.FC = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

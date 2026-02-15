@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
-import { SKILLS } from '../constants';
-import { Skill } from '../types';
+import { SKILLS } from '../constants.tsx';
+import { Skill } from '../types.ts';
 
 const Skills: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<'All' | Skill['category']>('All');
@@ -23,7 +22,6 @@ const Skills: React.FC = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-emerald-600 mx-auto rounded-full"></div>
         </div>
 
-        {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-16">
           {categories.map((cat) => (
             <button
@@ -40,14 +38,12 @@ const Skills: React.FC = () => {
           ))}
         </div>
 
-        {/* Skills Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {filteredSkills.map((skill) => (
             <div 
               key={skill.name}
               className="group relative glass-dark p-8 rounded-[2rem] border border-white/5 transition-all duration-500 hover:border-blue-500/40 hover:-translate-y-3 interactive-card"
             >
-              {/* Card Glow Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 via-blue-600/0 to-blue-600/0 group-hover:from-blue-600/5 group-hover:to-blue-600/10 transition-all duration-500 rounded-[2rem]"></div>
               
               <div className="relative z-10">

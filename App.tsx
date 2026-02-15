@@ -1,15 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import DevPulse from './components/DevPulse';
-import EducationSection from './components/Education';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import CustomCursor from './components/CustomCursor';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import About from './components/About.tsx';
+import Skills from './components/Skills.tsx';
+import Projects from './components/Projects.tsx';
+import DevPulse from './components/DevPulse.tsx';
+import EducationSection from './components/Education.tsx';
+import Contact from './components/Contact.tsx';
+import Footer from './components/Footer.tsx';
+import CustomCursor from './components/CustomCursor.tsx';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);

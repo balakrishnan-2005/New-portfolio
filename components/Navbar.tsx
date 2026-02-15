@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Menu, X, Terminal } from 'lucide-react';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS } from '../constants.tsx';
 
 interface NavbarProps {
   scrolled: boolean;
@@ -60,7 +60,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
         behavior: 'smooth'
       });
       
-      // Update state manually if it's a quick click to ensure immediate visual feedback
       setActiveSection(targetId);
     }
   }, []);
@@ -70,7 +69,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
       scrolled || isOpen ? 'glass-dark py-3 shadow-lg' : 'bg-transparent py-6'
     }`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
         <a 
           href="#home" 
           onClick={(e) => handleLinkClick(e, '#home')}
@@ -85,7 +83,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           </span>
         </a>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => {
             const isActive = activeSection === link.href.substring(1);
@@ -114,7 +111,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           </a>
         </div>
 
-        {/* Mobile Toggle */}
         <button 
           className="md:hidden text-white p-2 relative z-[70]"
           onClick={() => setIsOpen(!isOpen)}
@@ -124,7 +120,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 z-[50] bg-slate-900/98 backdrop-blur-3xl transition-all duration-500 ease-in-out md:hidden ${
         isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none invisible'
       }`}>

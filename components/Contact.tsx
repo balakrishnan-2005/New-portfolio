@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Send, MapPin, Phone, Mail, CheckCircle2 } from 'lucide-react';
-import { SOCIAL_LINKS } from '../constants';
+import { SOCIAL_LINKS } from '../constants.tsx';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState<'idle' | 'loading' | 'success'>('idle');
@@ -19,8 +18,6 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-24 px-6 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          
-          {/* Left Side: Info */}
           <div>
             <h2 className="text-blue-500 font-bold tracking-widest uppercase text-sm mb-4">Get in Touch</h2>
             <h3 className="text-4xl md:text-5xl font-extrabold font-heading text-white mb-8 leading-tight">
@@ -77,7 +74,6 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side: Form */}
           <div className="glass-dark p-8 md:p-12 rounded-[40px] border border-white/5 shadow-2xl relative overflow-hidden">
             {formState === 'success' ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-12">
@@ -127,7 +123,6 @@ const Contact: React.FC = () => {
                     className="w-full px-6 py-4 bg-slate-900 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white placeholder:text-slate-600 transition-colors resize-none"
                   ></textarea>
                 </div>
-                
                 <button 
                   disabled={formState === 'loading'}
                   className="w-full py-5 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-900 text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-3 active:scale-95"
@@ -143,7 +138,6 @@ const Contact: React.FC = () => {
               </form>
             )}
           </div>
-
         </div>
       </div>
     </section>

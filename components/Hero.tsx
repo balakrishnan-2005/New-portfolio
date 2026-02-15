@@ -1,7 +1,6 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ArrowRight, Code2, Database, Terminal as TerminalIcon } from 'lucide-react';
-import { SOCIAL_LINKS, CODE_SNIPPET } from '../constants';
+import { SOCIAL_LINKS, CODE_SNIPPET } from '../constants.tsx';
 
 const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
@@ -28,6 +27,21 @@ const Hero: React.FC = () => {
 
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, roleIndex]);
+
+  const handleScrollTo = useCallback((e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
 
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center pt-24 px-6 overflow-visible">
@@ -59,14 +73,22 @@ const Hero: React.FC = () => {
             Currently architecting digital solutions with <span className="text-white font-medium">Java & Spring Boot</span>.
           </p>
 
-          <div className="flex flex-wrap justify-center lg:justify-start gap-5 mb-14">
-            <a href="#projects" className="group relative px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold transition-all shadow-xl shadow-blue-600/20 active:scale-95 overflow-hidden">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-5 mb-14 relative z-20">
+            <a 
+              href="#projects" 
+              onClick={(e) => handleScrollTo(e, 'projects')}
+              className="group relative px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold transition-all shadow-xl shadow-blue-600/20 active:scale-95 overflow-hidden block"
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               <span className="flex items-center gap-2 relative z-10">
                 Explore Work <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </span>
             </a>
-            <a href="#contact" className="px-10 py-5 bg-slate-800/50 hover:bg-slate-800 text-white rounded-2xl font-bold transition-all border border-white/10 backdrop-blur-sm active:scale-95">
+            <a 
+              href="#contact" 
+              onClick={(e) => handleScrollTo(e, 'contact')}
+              className="px-10 py-5 bg-slate-800/50 hover:bg-slate-800 text-white rounded-2xl font-bold transition-all border border-white/10 backdrop-blur-sm active:scale-95 block"
+            >
               Let's Talk
             </a>
           </div>
@@ -92,7 +114,6 @@ const Hero: React.FC = () => {
           <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-emerald-500/20 blur-[120px] rounded-full animate-pulse"></div>
           
           <div className="relative glass-dark rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] border border-white/10 group transform-gpu transition-all duration-700 hover:scale-[1.02] hover:rotate-1">
-            {/* Header */}
             <div className="flex items-center justify-between px-6 py-4 bg-slate-800/40 border-b border-white/5 backdrop-blur-md">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
@@ -116,12 +137,9 @@ const Hero: React.FC = () => {
                 </code>
               </pre>
             </div>
-
-            {/* Gloss Overlay */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none"></div>
           </div>
 
-          {/* Floating Elements */}
           <div className="absolute -top-10 -right-10 p-5 glass rounded-2xl shadow-2xl animate-bounce-slow border border-blue-500/20 group hover:border-blue-500/50 transition-colors">
             <Code2 className="text-blue-400" size={32} />
           </div>
@@ -129,7 +147,6 @@ const Hero: React.FC = () => {
             <Database className="text-emerald-400" size={32} />
           </div>
         </div>
-
       </div>
     </section>
   );
