@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   Github, 
@@ -148,3 +149,25 @@ public class OrderController {
     }
 }
 `.trim();
+
+// Add TESTIMONIALS constant to resolve import error in TestimonialSlider.tsx
+export const TESTIMONIALS = [
+  {
+    name: 'Senthil Kumar',
+    role: 'Tech Lead',
+    content: 'Balakrishnan exhibits deep focus on back-end architecture. His implementations using Spring Boot are both clean and highly performant.',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop'
+  },
+  {
+    name: 'Anjali Sharma',
+    role: 'UI/UX Mentor',
+    content: 'A developer who actually cares about the front-end experience. He successfully integrated complex REST APIs into intuitive user interfaces.',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop'
+  },
+  {
+    name: 'Rajesh Raman',
+    role: 'Senior Software Engineer',
+    content: 'Exceptional problem-solving skills. His grasp of MySQL database optimization helped significantly improve our application performance.',
+    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=150&auto=format&fit=crop'
+  }
+];
