@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Terminal as TerminalIcon, GitBranch, Star, GitFork, History } from 'lucide-react';
 import { TERMINAL_COMMANDS, GITHUB_REPOS } from '../constants';
