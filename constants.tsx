@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   Github, 
@@ -12,7 +13,7 @@ import {
   GitFork,
   BookOpen
 } from 'lucide-react';
-import { Project, Skill, Education } from './types.ts';
+import { Project, Skill, Education, Testimonial } from './types.ts';
 
 export const NAV_LINKS = [
   { name: 'Home', href: '#home' },
@@ -148,3 +149,19 @@ public class OrderController {
     }
 }
 `.trim();
+
+// Fix: Export TESTIMONIALS to resolve the import error in components/TestimonialSlider.tsx
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    name: "Dr. S. Karthik",
+    role: "Professor, JJCET",
+    content: "Balakrishnan has shown remarkable growth in full-stack development. His final year project on e-commerce architecture was outstanding.",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Karthik"
+  },
+  {
+    name: "Rajesh Chen",
+    role: "Senior Engineer, TechCorp",
+    content: "A quick learner who is not afraid to dive into complex backend logic. His Spring Boot skills are very solid for a fresher.",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rajesh"
+  }
+];

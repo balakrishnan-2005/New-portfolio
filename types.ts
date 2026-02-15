@@ -31,3 +31,11 @@ export interface Experience {
   period: string;
   description: string[];
 }
+
+// Fix: Added Testimonial interface to support the TestimonialSlider component
+export interface Testimonial {
+  name: string;
+  role: string;
+  content: string;
+  avatar: string;
+}

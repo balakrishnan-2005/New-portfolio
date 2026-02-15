@@ -14,7 +14,7 @@ const About: React.FC = () => {
           <div className="w-20 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 mb-20">
           <div className="lg:col-span-2 glass-dark p-8 md:p-12 rounded-3xl border border-white/5 flex flex-col justify-center">
             <h4 className="text-2xl font-bold text-white mb-6">Who am I?</h4>
             <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
